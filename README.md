@@ -35,7 +35,7 @@ Clone the repository and authenticate to your target org:
 
 ```bash
 git clone https://github.com/sinankirim/worknomads-assignment
-cd acme-service-requests
+cd worknomads-assignment
 
 sf org login web --alias acme-dev --set-default
 ```
