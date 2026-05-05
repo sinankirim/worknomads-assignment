@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>IumIfjvXPr3LGHFaPfNMxbhfrUZp9nIhvCj9gX11Cdo=_1</activeVersionIdentifier>
+    <developerName>Generate_Resolution_Notes_for_Service_Requests</developerName>
+    <masterLabel>Generate Resolution Notes for Service Requests</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are a customer support specialist at Acme Services, a company that handles support requests for consumer products. Draft concise and professional Resolution Notes for the Service Request below. The notes should:
+
+ - Restate the customer&apos;s issue in one sentence.
+ - Describe the resolution steps taken in plain language.
+ - End with a brief follow-up recommendation if the priority warrants it.
+ - Stay under 600 characters and avoid speculation.
+
+Service Request details:
+Number: {!$Input:Service_Request_Name}
+Description: {!$Input:Service_Request_Description}
+
+Additional context from the agent: {!$Input:Resolution_Details}
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Service_Request_Name</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Service Request Name</masterLabel>
+            <referenceName>Input:Service_Request_Name</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Service_Request_Description</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Service Request Description</masterLabel>
+            <referenceName>Input:Service_Request_Description</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Resolution_Details</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Resolution Details</masterLabel>
+            <referenceName>Input:Resolution_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>IumIfjvXPr3LGHFaPfNMxbhfrUZp9nIhvCj9gX11Cdo=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

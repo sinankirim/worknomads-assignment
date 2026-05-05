@@ -1,0 +1,21 @@
+{
+  "required" : [ "resolutionDetails", "serviceRequestNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "resolutionDetails" : {
+      "title" : "resolutionDetails",
+      "description" : "The context for resolution which is to be used in Resolution Notes, obtained from user input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "serviceRequestNumber" : {
+      "title" : "serviceRequestNumber",
+      "description" : "The number of the Service Request to be resolved, obtained from user input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

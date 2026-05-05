@@ -1,0 +1,38 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "isFound" : {
+      "title" : "isFound",
+      "description" : "The boolean flag that stores whether the Service Request with the given name exists",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "isResolved" : {
+      "title" : "isResolved",
+      "description" : "Boolean flag that stores whether the Service Request is Resolved or not (true if Resolved, false if not)",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "promptResponse" : {
+      "title" : "promptResponse",
+      "description" : "The AI-generated Resolution Notes, which is to be used in the Resolve_Service_Request action",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "serviceRequestStatus" : {
+      "title" : "serviceRequestStatus",
+      "description" : "The status of the corresponding Service Request record (could be New, In Progress or Resolved)",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

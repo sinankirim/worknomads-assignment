@@ -1,0 +1,91 @@
+<!--
+ - Created by sinan on 30.04.2026.
+ -->
+
+<!-- Service Request Form -->
+<template>
+    <div class={flexipageRegionWidth}>
+        <div class="slds-box slds-is-relative">
+            <template if:true={inProgress}>
+                <div class="slds-grid progress">
+                    <lightning-icon
+                            icon-name="utility:threedots"
+                            size="medium">
+                    </lightning-icon>
+                    &nbsp;&nbsp;
+                    <lightning-formatted-rich-text class="slds-form-element__label slds-col" value={inProgressMsg}></lightning-formatted-rich-text>
+                </div>
+            </template>
+            <template if:true={success}>
+                <div class="slds-grid success">
+                    <lightning-icon
+                            icon-name="utility:check"
+                            size="medium"
+                            class="successIcon">
+                    </lightning-icon>
+                    &nbsp;&nbsp;
+                    <lightning-formatted-rich-text class="slds-form-element__label slds-col" value={successMsg}></lightning-formatted-rich-text>
+                </div>
+            </template>
+            <template if:true={error}>
+                <div class="slds-grid error">
+                    <lightning-icon
+                            icon-name="utility:error"
+                            size="medium"
+                            class="errorIcon">
+                    </lightning-icon>
+                    &nbsp;&nbsp;
+                    <lightning-formatted-rich-text class="slds-form-element__label slds-col" value={errorMsg}></lightning-formatted-rich-text>
+                </div>
+
+            </template>
+            <lightning-input type="email" required="true" name="inputEmail" label="Email" value={email} disabled={disableForm} onchange={handleOnChangeEmail}></lightning-input>
+            <lightning-textarea
+                    name="descriptionInput"
+                    message-when-value-missing="Value needed to proceed"
+                    label="Description"
+                    value={description}
+                    class="customTextarea"
+                    disabled={disableForm}
+                    onchange={handleOnChangeDescription}
+            >
+            </lightning-textarea>
+            <lightning-combobox
+                    name="priority"
+                    label="Priority"
+                    value={priority}
+                    placeholder="Select Priority"
+                    options={priorityOptions}
+                    onchange={handleOnChangePriority}
+                    disabled={disableForm}
+            >
+
+            </lightning-combobox>
+            <br/>
+            <div align="right">
+                <lightning-button label="Save" variant="brand" onclick={handleClick} disabled={disableForm}></lightning-button>
+            </div>
+        </div>
+        <br/>
+        <lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+            <lightning-accordion-section name="recentRequestsAccordion" label="Recent Requests">
+                <template for:each={recentRequests} for:item="request">
+                    <div key={request.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_x-small">
+                        <lightning-card icon-name="action:new_custom61">
+                            <h2 slot="title">
+                                <a href="{'/' + request.Id}" target="_blank">
+                                    {request.Name}
+                                </a>
+                            </h2>
+                            <div class="slds-p-horizontal_medium">
+                                {request.Customer_Email__c}
+                                <br/>
+                                Priority: {request.Priority__c}
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>

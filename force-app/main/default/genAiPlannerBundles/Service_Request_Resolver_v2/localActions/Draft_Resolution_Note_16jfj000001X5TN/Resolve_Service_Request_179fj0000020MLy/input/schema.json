@@ -1,0 +1,21 @@
+{
+  "required" : [ "resolutionNotes", "serviceRequestNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "resolutionNotes" : {
+      "title" : "resolutionNotes",
+      "description" : "The AI-generated Resolution Notes from the previous action (Generate_Resolution_Notes)",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "serviceRequestNumber" : {
+      "title" : "serviceRequestNumber",
+      "description" : "The Record ID of the aforementioned Service Request which was obtained by user input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

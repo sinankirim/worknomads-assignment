@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Deliver personalized customer interactions with an autonomous AI agent. Agentforce Service Agent intelligently supports your customers with common inquiries and escalates complex issues.</description>
+    <localTopicLinks>
+        <genAiPluginName>Draft_Resolution_Note_16jfj000001X5TN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>agent_router_16jfj000001X5TN</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Draft_Resolution_Note_16jfj000001X5TN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Draft a resolution note for the Service Request that is to be resolved</description>
+        <developerName>Draft_Resolution_Note_16jfj000001X5TN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent for Acme Services, a company that handles support requests for consumer products.</description>
+            <developerName>instruction0_179fj0000020MLy</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179fj0000020MLy</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Resolve_Service_Request_179fj0000020MLy</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Generate_Resolution_Notes_179fj0000020MLy</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Resolve_Service_Request_179fj0000020MLy</fullName>
+            <description>Update the status of the Service Request to Resolved by a Flow action</description>
+            <developerName>Resolve_Service_Request_179fj0000020MLy</developerName>
+            <invocationTarget>Resolve_Service_Request_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Resolve_Service_Request</localDeveloperName>
+            <masterLabel>Resolve Service Request</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Generate_Resolution_Notes_179fj0000020MLy</fullName>
+            <description>Generate a resolution note value for the Service Request that is to be resolved</description>
+            <developerName>Generate_Resolution_Notes_179fj0000020MLy</developerName>
+            <invocationTarget>Run_Resolution_Note_Prompt</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>Generate_Resolution_Notes</localDeveloperName>
+            <masterLabel>Generate Resolution Notes</masterLabel>
+            <progressIndicatorMessage>Generating, please wait</progressIndicatorMessage>
+        </localActions>
+        <localDeveloperName>Draft_Resolution_Note</localDeveloperName>
+        <masterLabel>Draft Resolution Note</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>agent_router_16jfj000001X5TN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Welcome the user and determine the appropriate subagent based on user input</description>
+        <developerName>agent_router_16jfj000001X5TN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent for Acme Services, a company that handles support requests for consumer products.
+
+{{state.AgentScriptInternal_agent_instructions}}</description>
+            <developerName>instruction0_179fj0000020MLz</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179fj0000020MLz</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>agent_router</localDeveloperName>
+        <masterLabel>Agent Router</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>Service Request Resolver</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlannerBundle>

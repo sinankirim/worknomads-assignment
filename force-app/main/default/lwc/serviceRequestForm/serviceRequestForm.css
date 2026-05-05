@@ -1,0 +1,28 @@
+/**
+ * Created by sinan on 1.05.2026.
+ */
+
+.list-first {
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+
+.list-last {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.error {
+    --sds-c-icon-color-foreground-default: #800e0a;
+    --sds-c-icon-color-foreground: #800e0a;
+}
+
+.progress {
+    --sds-c-icon-color-foreground-default: #444444;
+    --sds-c-icon-color-foreground: #444444;
+}
+
+.success {
+    --sds-c-icon-color-foreground-default: #41800a;
+    --sds-c-icon-color-foreground: #41800a;
+}
