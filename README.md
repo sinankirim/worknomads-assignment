@@ -114,7 +114,7 @@ Additionally, I also implemented an Apex service layer (**ServiceRequestHandler*
 - Resolve a single Service Request (given by its Id) with a corresponding Resolution Note
 - Resolve multiple Service Requests given as a list with their corresponding Resolution Notes also given as a list
 
-The first method is the main method, therefore all other methods are variations of the first one. This ensures bulk safety.
+The first method is the main method, therefore all other methods are variations of the first one. This ensures reusability and bulk safety.
 
 ### Section 2 - Lightning Web Component
 
