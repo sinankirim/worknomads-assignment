@@ -34,7 +34,7 @@ may need a Trailhead Playground with Agentforce features instead.
 Clone the repository and authenticate to your target org:
 
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/sinankirim/worknomads-assignment
 cd acme-service-requests
 
 sf org login web --alias acme-dev --set-default
